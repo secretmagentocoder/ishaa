@@ -5,7 +5,15 @@ import Animated, { Keyframe, Easing } from 'react-native-reanimated';
 import classes from './animated-icon.module.css';
 const DURATION = 300;
 
+import * as SplashScreen from 'expo-splash-screen';
+import { useEffect } from 'react';
+
 export function AnimatedSplashOverlay() {
+  useEffect(() => {
+    SplashScreen.hideAsync().catch((err) => {
+      console.warn("Failed to hide splash screen:", err);
+    });
+  }, []);
   return null;
 }
 
