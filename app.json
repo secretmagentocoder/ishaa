@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "nariya-app",
+    "name": "Isha's Diary",
     "slug": "nariya-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,7 +17,8 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anzzkp.nariyaapp"
     },
     "web": {
       "output": "static",
@@ -37,6 +38,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "d3119779-2fb3-47ac-ac05-a109db943320"
+      }
     }
   }
 }
