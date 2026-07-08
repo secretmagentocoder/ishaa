@@ -40,6 +40,10 @@ export default function HomeScreen() {
         });
       }
       setLoading(false);
+    }, (error) => {
+      console.error("Campaign subscription failed:", error);
+      Alert.alert("Database Error", "Failed to load campaign data. Please check your Firestore rules.");
+      setLoading(false);
     });
 
     return () => unsubCampaign();
@@ -57,6 +61,9 @@ export default function HomeScreen() {
         } else {
           setPersonalCount(0);
         }
+      },
+      (error) => {
+        console.error("Personal count subscription failed:", error);
       }
     );
 
@@ -71,6 +78,8 @@ export default function HomeScreen() {
         list.push({ id: docSnap.id, ...docSnap.data() });
       });
       setMembers(list);
+    }, (error) => {
+      console.error("Members subscription failed:", error);
     });
     return () => unsubMembers();
   }, []);

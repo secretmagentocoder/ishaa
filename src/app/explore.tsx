@@ -25,6 +25,9 @@ export default function ExploreScreen() {
       });
       setUsers(data);
       setLoading(false);
+    }, (error) => {
+      console.error("Leaderboard subscription failed:", error);
+      setLoading(false);
     });
 
     return () => unsub();
